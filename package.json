@@ -1,8 +1,8 @@
 {
   "name": "keystroke-input",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "A custom input element that handles keystrokes. Created as a custom HTML element using Web Components.",
+  "main": ".src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "MODE=development webpack --watch",
