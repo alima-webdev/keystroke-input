@@ -56,3 +56,6 @@ The keystroke object is formatted as:
 }
 // It also contains the functions toString(), toJSON(), and validateAgainst(event: KeyboardEvent)
 ```
+
+## License
+This project is released under the GNU GENERAL PUBLIC license. See the [LICENSE](./LICENSE) file for more details.
