@@ -18,7 +18,9 @@ document.getElementById("keystroke").addEventListener("keystrokechange", (event)
 })
 ```
 
-The keystroke object is formatted as {
+The keystroke object is formatted as:
+```
+{
     modifiers: {
         alt: boolean,
         ctrl: boolean,
@@ -28,3 +30,4 @@ The keystroke object is formatted as {
     key: string
 }
 It also contains the functions toString(), toJSON(), and validateAgainst(event: KeyboardEvent)
+```
