@@ -73,7 +73,7 @@ export class InputKeystroke extends HTMLInputElement {
         this.keystrokeValue = keystroke;
 
         // Dispatch the change event
-        const keystrokeChangeEvent: Event = new CustomEvent(keystrokeInputEvents.change, { detail: { keystroke: this.keystrokeValue } })
+        const keystrokeChangeEvent: CustomEvent = new CustomEvent(keystrokeInputEvents.change, { detail: { keystroke: this.keystrokeValue } })
         this.dispatchEvent(keystrokeChangeEvent)
 
         // Prevent the default behavior
