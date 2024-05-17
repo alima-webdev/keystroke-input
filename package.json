@@ -1,0 +1,19 @@
+{
+  "name": "keystroke-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "MODE=development webpack --watch",
+    "build": "MODE=production webpack"
+  },
+  "author": "Alex Lima",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

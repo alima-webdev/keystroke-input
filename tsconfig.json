@@ -1,0 +1,21 @@
+{
+  // "version": "2.0.2",
+  "compilerOptions": {
+      "lib": ["ESNext", "esnext.promise", "dom"],
+      "target": "ESNext",
+      // "typeRoots": [
+      //   "node_modules/@types"
+      // ],
+      "outDir": "dist",
+      // "module": "",
+      // "moduleResolution": "Classic",
+      // "emitDecoratorMetadata": true,
+      // "experimentalDecorators": true,
+      // "allowSyntheticDefaultImports": true,
+      // "declaration": false,
+      // "sourceMap": true
+  },
+  // "exclude": [
+  //     "node_modules"
+  // ]
+}
