@@ -1,6 +1,6 @@
 {
   "name": "keystroke-input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom input element that handles keystrokes. Created as a custom HTML element using Web Components.",
   "main": "./dist/keystroke-input.js",
   "scripts": {
