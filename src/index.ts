@@ -53,7 +53,7 @@ export class InputKeystroke extends HTMLInputElement {
         // log("KeyDown")
 
         // Get the keystroke and construct the class
-        const key = isMainKeyValid(ev.code) ? ev.code.replace("Key", "") : "";
+        const key = isMainKeyValid(ev.code) ? ev.code.replace(/Key|Digit/gi, "") : "";
         const isAlt = ev.altKey;
         const isCtrl = ev.ctrlKey;
         const isMeta = ev.metaKey;
