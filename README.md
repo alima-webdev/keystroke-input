@@ -1,4 +1,4 @@
-# Keystroke Input
+# Keystroke Input Element
 A custom input element that handles keystrokes. Created as a custom HTML element using Web Components.
 
 ## Installation
