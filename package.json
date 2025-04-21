@@ -1,7 +1,7 @@
 {
-  "name": "vite-jest-ts",
-  "private": true,
-  "version": "0.0.0",
+  "name": "keystroke-input",
+  "private": false,
+  "version": "2.0.1",
   "type": "module",
   "main": "./src/entry.tsx",
   "scripts": {

@@ -1,15 +1,15 @@
-# 🧠 Keystroke Input Component for React
+# Keystroke Input Component for React
 
 A lightweight and customizable React component that captures and displays user keystrokes in real-time. Perfect for keyboard shortcut editors, typing games, or accessibility tools.
 
-## ✨ Features
+## Features
 
-- ✅ Real-time keystroke capturing
-- 🎛️ Customizable display and behavior
-- 🔌 Easy integration with any React project
-- 💡 Supports modifier keys (Ctrl, Alt, Shift, etc.)
+- Real-time keystroke capturing
+- Customizable display and behavior
+- Easy integration with any React project
+- Supports modifier keys (Ctrl, Alt, Shift, etc.)
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install keystroke-input
@@ -17,7 +17,7 @@ npm install keystroke-input
 yarn add keystroke-input
 ```
 
-## 🚀 Usage
+## Usage
 
 ```jsx
 import KeystrokeInput from 'keystroke-input';
@@ -32,7 +32,7 @@ function App() {
 }
 ```
 
-## 🧪 Example
+## Example
 
 Visual input display
 ```
@@ -52,11 +52,11 @@ Actual field value
 }
 ```
 
-## 🎨 Styling
+## Styling
 
 The component comes with minimal styling. You can easily customize it via CSS or by passing a custom `className` or using Tailwind classes.
 
-## 🛠️ Development
+## Development
 
 Clone the repo and run locally:
 
@@ -67,6 +67,6 @@ npm install
 npm run dev
 ```
 
-## 🧾 License
+## License
 
 GPL-3.0 © [](https://github.com/alima-webdev)
