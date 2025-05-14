@@ -1,14 +1,18 @@
 {
-  "compilerOptions": {
-    "sourceMap": true,
-  },
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist",
+        "emitDeclarationOnly": true,
+        "outDir": "dist",
+        "module": "ESNext",
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "strict": true,
     },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+    "include": [
+        "src"
+    ]
 }

@@ -1,13 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import dts from 'vite-plugin-dts'
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react()],
+    plugins: [
+        react(),
+        dts()
+    ],
 
     build: {
         lib: {
-            entry: 'src/entry.tsx',
+            entry: 'src/index.tsx',
             name: 'KeystrokeInput',
             fileName: (format) => `index.${format}.js`,
         },
