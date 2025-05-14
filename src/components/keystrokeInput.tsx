@@ -1,5 +1,5 @@
 // React
-import { ChangeEvent, forwardRef, KeyboardEvent, KeyboardEventHandler, RefObject, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { ChangeEvent, forwardRef, KeyboardEvent, KeyboardEventHandler, useEffect, useImperativeHandle, useRef, useState } from "react";
 
 // Utils
 import { getKeystrokeDisplayValue, isValidKeystroke, Keystroke } from "./keystrokeInputUtils";
@@ -63,6 +63,7 @@ const KeystrokeInput = forwardRef(({ className = "", onChange = () => { }, ...pr
     // Expose the inputValueRef to the parent ref
     useImperativeHandle(ref, () => inputValueRef.current as HTMLInputElement);
 
+    // TEST
     return (
         <>
             {/* Value */}

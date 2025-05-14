@@ -9,7 +9,7 @@ export default defineConfig({
         lib: {
             entry: 'src/entry.tsx',
             name: 'KeystrokeInput',
-            fileName: (format) => `keystroke-input.${format}.js`,
+            fileName: (format) => `index.${format}.js`,
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
