@@ -8,8 +8,8 @@ export default defineConfig({
         react(),
         dts()
     ],
-
     build: {
+        sourcemap: true,
         lib: {
             entry: 'src/index.tsx',
             name: 'KeystrokeInput',

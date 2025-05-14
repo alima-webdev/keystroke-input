@@ -53,13 +53,16 @@ function getModifierDictionary() {
     return Object.keys(modifierDictionary).includes(os) ? modifierDictionary[os as keyof typeof modifierDictionary] : modifierDictionary.windows
 }
 export function getKeystrokeDisplayValue(keystroke: Keystroke) {
+    // Ensure the keystroke object is valid
+    if(typeof keystroke != "object") return ""
+
     const modifiers = getModifierDictionary()
-    let keys = []
+    const keys = []
     if (keystroke.ctrlKey) keys.push(modifiers.ctrlKey)
     if (keystroke.metaKey) keys.push(modifiers.metaKey)
     if (keystroke.shiftKey) keys.push(modifiers.shiftKey)
     if (keystroke.altKey) keys.push(modifiers.altKey)
-    let keyName = getKeyName(keystroke.code)
+    const keyName = getKeyName(keystroke.code)
     keys.push(keyName)
     return keys.join(" ")
 }

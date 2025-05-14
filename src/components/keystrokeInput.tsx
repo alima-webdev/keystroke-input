@@ -1,5 +1,5 @@
 // React
-import { ChangeEvent, forwardRef, KeyboardEvent, KeyboardEventHandler, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { ChangeEvent, forwardRef, KeyboardEvent, KeyboardEventHandler, useImperativeHandle, useRef, useState } from "react";
 
 // Utils
 import { getKeystrokeDisplayValue, isValidKeystroke, Keystroke } from "./keystrokeInputUtils";
@@ -8,17 +8,22 @@ import { getKeystrokeDisplayValue, isValidKeystroke, Keystroke } from "./keystro
 type KeystrokeInputProps = {
     className?: string,
     name: string,
-    onChange?: ((event: ChangeEvent<Element> | Keystroke | null) => void) | undefined,
-    value?: any
+    onChange?: ((event: ChangeEvent<Element> | null) => void) | undefined,
+    value?: string
 }
-const KeystrokeInput = forwardRef(({ className = "", onChange = () => { }, ...props }: KeystrokeInputProps, ref) => {
+const KeystrokeInput = forwardRef(({ className = "", ...props }: KeystrokeInputProps, ref) => {
+
+    // Determine if the input is controlled
+    const isControlledInput = props.value ? true : false
 
     // Refs
-    // const inputValueRef = ref !== null ? ref : useRef<HTMLInputElement>(null)
     const inputValueRef = useRef<HTMLInputElement>(null)
 
     // States
-    const [formValue, setFormValue] = useState<Keystroke | null>(null)
+    const [valueState, setValueState] = useState<Keystroke | null>(null)
+
+    // Compute the form value
+    const formValue = isControlledInput ? JSON.parse(String(props.value)) : valueState
 
     // Events
     const onKeyEventHandler: KeyboardEventHandler = (event: KeyboardEvent) => {
@@ -35,35 +40,33 @@ const KeystrokeInput = forwardRef(({ className = "", onChange = () => { }, ...pr
         // Check if the keystroke is valid
         if (!isValidKeystroke(code)) return;
 
-        // Set the form value
-        setFormValue(keystroke)
-
-        // Prevent default
-        event.preventDefault()
-
-    }
-
-    useEffect(() => {
-
-        // Trigger external events
-        if (Object.keys(props).findIndex(val => val === "value") >= 0) {
-            onChange(formValue)
-        } else {
+        // If there is an onChange prop
+        if (props.onChange) {
+            if (inputValueRef.current) {
+                inputValueRef.current.value = JSON.stringify(keystroke);
+            }
             const changeEvent = {
                 target: inputValueRef.current,
                 currentTarget: inputValueRef.current,
                 type: "change",
                 nativeEvent: null,
             } as unknown as React.ChangeEvent<HTMLInputElement>;
-            onChange(changeEvent)
+            props.onChange(changeEvent)
         }
 
-    }, [formValue])
+        // Set the form value if the input is not controlled (depends on the component state)
+        if (isControlledInput === false) {
+            setValueState(keystroke)
+        }
+
+        // Prevent default
+        event.preventDefault()
+
+    }
 
     // Expose the inputValueRef to the parent ref
     useImperativeHandle(ref, () => inputValueRef.current as HTMLInputElement);
 
-    // TEST
     return (
         <>
             {/* Value */}
